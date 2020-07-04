@@ -257,3 +257,129 @@ var num = str.localeCompare(string);
 }
 
 
+
+    
+/* random number generation */
+
+function random1() {
+
+  document.getElementById("num1").value = Math.floor(Math.random() * 1000);
+
+}
+
+function random2() {
+
+  document.getElementById("num2").value = Math.floor(Math.random() * 1000);
+
+}
+function play() {
+
+  var x = document.getElementById("num1").value;
+
+  var y = document.getElementById("num2").value;
+
+  if (x == "") {
+
+    alert("please generate a number by clicking on the button:");
+
+    return false;
+
+  }
+
+  var r = subfunction(x);
+
+  var s = subfunction(y);
+
+  if (r == s) {
+
+    alert("TIE :");
+
+    return false;
+
+  }
+
+
+
+  if (r == 1 && s == 2) {
+
+    alert("Inputs are 'Human' and 'Cockroach',Finally 'Human' survive.");
+
+    return false;
+
+  }
+
+  if (r == 2 && s == 1) {
+
+    alert("The nputs are  'Cockroach' and  'Human',Finally 'Human' survives");
+
+    return false;
+
+  }
+
+  if (r == 1 && s == 3) {
+
+    alert("The inputs are   'Human' and 'Bomb',Finally 'Bomb' survives");
+
+    return false;
+
+  }
+
+  if (r == 3 && s == 1) {
+
+    alert("The inputs are   'Bomb' and 'Human',Finally 'Bomb' survives");
+
+    return false;
+
+  }
+
+
+
+  if (r == 2 && s == 3) {
+
+    alert("The inputs are   'Cockroach' and 'Bomb',Finally 'Cockroach' survives");
+
+    return false;
+
+  }
+
+  if (r == 3 && s == 2) {
+
+    alert("The inputs are   'Bomb' and 'Cockroach',Finally 'Cockroach' survive.");
+
+    return false;
+
+  }
+
+}
+
+
+
+function subfunction(p) {
+
+  if (p >= 0 && p <= 250) {
+
+    return 1;
+
+  }
+
+
+
+  if (p > 250 && p <= 500) {
+
+    return 2;
+
+  }
+
+
+
+  if (p > 500 && p <= 1000) {
+
+    return 3;
+
+  }
+
+}
+
+
+
+
