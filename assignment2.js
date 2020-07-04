@@ -115,10 +115,7 @@ var r1 = Number.isInteger(x);
     x = x;
 
   }
-
-  
-
-  ans = Math.sqrt(x);
+ans = Math.sqrt(x);
 
 return ans +"&nbsp&nbsp&nbsp&nbsp (square root of the given number)";
 
@@ -130,53 +127,65 @@ return ans +"&nbsp&nbsp&nbsp&nbsp (square root of the given number)";
 
 
 
- function palindrome() {
 
-  var string = myform.single.value;
+/* validation */
 
-var i,
+function validate() {
 
-  str = "";
+  var no = myform2.mobile.value;
 
-  for (i = string.length - 1; i >= 0; i--) {
+  var phone = /^\d{10}$/;
 
-    str += string[i];
-
-  }
-
-var num = str.localeCompare(string);
-
-  if (num == 0) {
-
-    alert("yes the string is a Palindrome");
-
-   return true;
+  if (no.match(phone)) {
 
   } else {
 
- alert("No the string is not a  Palindrome");
+    alert("You have entered an invalid mobile number");
 
     return false;
 
+  }
+
+  var x = myform2.email.value;
+
+
+
+  var pos1 = x.indexOf("@");
+
+  var pos2 = x.lastIndexOf(".");
+
+  if (pos1 < 1 || pos2 < pos1 + 2 || pos2 + 2 >= x.length) {
+
+    alert("You have entered an invalid email id:");
+
+    return false;
+
+  }
+
+
+
+  var name = myform2.name.value;
+
+  if (!isNaN(name.charAt(0))) {
+
+    alert("First character Cannot be a number.");
+
+  }
+
 }
 
 
 
-}
 
 
 
-
-
-
-
-
+/*anagram*/
 
 function anagram() {
 
-  var one = myform.first.value;
+  var one = myform1.first.value;
 
-  var two = myform.second.value;
+  var two = myform1.second.value;
 
   var a1 = one.toLowerCase();
 
@@ -212,5 +221,39 @@ alert("Yes it is an Anagram");
 
 }
 
+
+/*palindrome*/
+
+ function palindrome() {
+
+  var string = myform1.single.value;
+
+var i,
+
+  str = "";
+
+  for (i = string.length - 1; i >= 0; i--) {
+
+    str += string[i];
+
+  }
+
+var num = str.localeCompare(string);
+
+  if (num == 0) {
+
+    alert("yes the string is a Palindrome");
+
+   return true;
+
+  } else {
+
+ alert("No the string is not a  Palindrome");
+
+    return false;
+
+}
+
+}
 
 
